@@ -89,6 +89,7 @@ const userController = {
         const followersCount = user.Followers.length
         const favoritedCount = user.FavoritedRestaurants.length
         res.render('users/profile', {
+          currentUser: req.user.id,
           user,
           restCount,
           count,
