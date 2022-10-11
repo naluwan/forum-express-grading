@@ -11,15 +11,62 @@
   </div>
 </div>
 
-<div class="card">
-  <h5 class="card-header">已評論{{restCount}}間餐廳</h5>
-  <div class="card-body d-flex flex-wrap">
-    {{#each comments}}
-    <a href="/restaurants/{{this.restaurantId}}">
-      <div class="m-1" style="width: 100px;height:100px"><img src="{{this.restaurantImage}}" alt=""
-          style="max-height:100%;max-width:100%;display:block;width:auto;height:auto;">
+<div class="col d-flex mt-3">
+
+  <div class="col-4">
+    <div class="card">
+      <h5 class="card-header">{{followingsCount}} followings(追蹤者)</h5>
+      <div class="card-body d-flex flex-wrap">
+        {{#each followings}}
+        <a href="/users/{{this.id}}">
+          <div class="m-1" style="width: 100px;height:100px"><img src="{{this.image}}" alt=""
+              style="max-height:100%;max-width:100%;display:block;width:auto;height:auto;">
+          </div>
+        </a>
+        {{/each}}
       </div>
-    </a>
-    {{/each}}
+    </div>
+
+    <div class="card mt-3">
+      <h5 class="card-header">{{followersCount}} followers(追隨者)</h5>
+      <div class="card-body d-flex flex-wrap">
+        {{#each followers}}
+        <a href="/users/{{this.id}}">
+          <div class="m-1" style="width: 100px;height:100px"><img src="{{this.image}}" alt=""
+              style="max-height:100%;max-width:100%;display:block;width:auto;height:auto;">
+          </div>
+        </a>
+        {{/each}}
+      </div>
+    </div>
   </div>
+
+  <div class="col-8 d-flex flex-column align-items-end">
+    <div class="card col-11">
+      <h5 class="card-header">{{restCount}} 已評論餐廳</h5>
+      <div class="card-body d-flex flex-wrap">
+        {{#each comments}}
+        <a href="/restaurants/{{this.restaurantId}}">
+          <div class="m-1" style="width: 100px;height:100px"><img src="{{this.restaurantImage}}" alt=""
+              style="max-height:100%;max-width:100%;display:block;width:auto;height:auto;">
+          </div>
+        </a>
+        {{/each}}
+      </div>
+    </div>
+
+    <div class="card col-11 mt-3">
+      <h5 class="card-header">{{favoritedCount}} 已收藏餐廳</h5>
+      <div class="card-body d-flex flex-wrap">
+        {{#each favoritedRestaurants}}
+        <a href="/restaurants/{{this.id}}">
+          <div class="m-1" style="width: 100px;height:100px"><img src="{{this.image}}" alt=""
+              style="max-height:100%;max-width:100%;display:block;width:auto;height:auto;">
+          </div>
+        </a>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+
 </div>
